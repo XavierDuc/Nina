@@ -536,38 +536,38 @@
     element.addEventListener(typeEvent, fn, delegation);
   }
 
-  function removeHandler(
-    element,
-    events,
-    typeEvent,
-    handler,
-    delegationSelector
-  ) {
-    const fn = findHandler(events[typeEvent], handler, delegationSelector);
+  // function removeHandler(
+  //   element,
+  //   events,
+  //   typeEvent,
+  //   handler,
+  //   delegationSelector
+  // ) {
+  //   const fn = findHandler(events[typeEvent], handler, delegationSelector);
 
-    if (!fn) {
-      return;
-    }
+  //   if (!fn) {
+  //     return;
+  //   }
 
-    element.removeEventListener(typeEvent, fn, Boolean(delegationSelector));
-    delete events[typeEvent][fn.uidEvent];
-  }
+  //   element.removeEventListener(typeEvent, fn, Boolean(delegationSelector));
+  //   delete events[typeEvent][fn.uidEvent];
+  // }
 
-  function removeNamespacedHandlers(element, events, typeEvent, namespace) {
-    const storeElementEvent = events[typeEvent] || {};
-    Object.keys(storeElementEvent).forEach((handlerKey) => {
-      if (handlerKey.includes(namespace)) {
-        const event = storeElementEvent[handlerKey];
-        removeHandler(
-          element,
-          events,
-          typeEvent,
-          event.originalHandler,
-          event.delegationSelector
-        );
-      }
-    });
-  }
+  // function removeNamespacedHandlers(element, events, typeEvent, namespace) {
+  //   const storeElementEvent = events[typeEvent] || {};
+  //   Object.keys(storeElementEvent).forEach((handlerKey) => {
+  //     if (handlerKey.includes(namespace)) {
+  //       const event = storeElementEvent[handlerKey];
+  //       removeHandler(
+  //         element,
+  //         events,
+  //         typeEvent,
+  //         event.originalHandler,
+  //         event.delegationSelector
+  //       );
+  //     }
+  //   });
+  // }
 
   function getTypeEvent(event) {
     // allow to get the native events from namespaced events ('click.bs.button' --> 'click')
