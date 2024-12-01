@@ -43,12 +43,13 @@
             if (entry.isIntersecting) {
               const img = entry.target;
               img.src = img.dataset.src;
-              img.classList.add("loaded");
+              img.onload = () => img.classList.add("loaded");
+              img.onerror = () => img.classList.add("error");
               observer.unobserve(img);
             }
           });
         },
-        { rootMargin: "50px" }
+        { rootMargin: "100px 0px" }
       );
 
       document.querySelectorAll(".gallery-item[data-src]").forEach((img) => {
