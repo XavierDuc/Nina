@@ -342,20 +342,18 @@ img[fetchpriority="high"] {
 	.top-header {
 		flex-direction: column;
 		padding-inline: 0;
+		height: 140px;
 	}
 	.top-header .nav, .top-header .nav ul {
 		width: 100%;
 		padding: 0 0 0 0;
+		margin-bottom: 20px;
 	}
 	.top-header .nav li {
 		flex: 1;
 		padding-block: 1em;
 		text-align: center;
 	}
-	.carousel-inner {
-		margin-top: 50px;
-		
-	  }
 	.picture.left::before, .picture.right::before {
 		height: 150px;
 	}
