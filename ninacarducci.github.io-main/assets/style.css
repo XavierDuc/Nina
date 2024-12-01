@@ -286,7 +286,6 @@ img[fetchpriority="high"] {
     width: 100%;
     height: auto;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
     will-change: transform;
     transition: opacity 0.3s ease;
 }
