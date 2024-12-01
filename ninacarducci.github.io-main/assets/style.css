@@ -1,10 +1,13 @@
 body {
 	max-width: 1920px;
 	margin: auto;
+	content-visibility: auto;
+	contain-intrinsic-size: auto 1000px;
 }
 * {
 	font-family: 'Inter';
 	font-style: normal;
+	box-sizing: border-box;
 }
 .top-header {
 	background-color: white;
@@ -16,10 +19,12 @@ body {
 	padding-inline: 100px;
 	padding-block: 30px;
 	align-items: center;
+	height: 90px;
 }
 
 .top-header .name {
 	font-size: 26px;
+	line-height: 1.2;
 }
 
 .nav ul {
@@ -27,6 +32,7 @@ body {
 	list-style-type: none;
 	font-size: 14px;
 	margin-bottom: 0;
+	height: 30px;
 }
 
 .nav li {
@@ -35,11 +41,15 @@ body {
 
 .nav a {
 	text-decoration: none;
-	color: #000
+	color: #000;
+	display: inline-block;
+	height: 100%;
 }
 
 .social-link img {
 	width: 20px;
+	height: 20px;
+	object-fit: contain;
 }
 
 #about {
@@ -48,6 +58,7 @@ body {
 	padding-inline: 100px;
 	padding-block: 100px;
 	position: relative;
+	min-height: 500px;
 }
 
 .picture.left::before {
@@ -65,71 +76,105 @@ body {
 	flex: 1;
 	margin: 0 20px;
 	z-index: 0;
+	display: flex;
+	align-items: center;
 }
 
 .picture img {
 	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	background-color: #f0f0f0;
+	transition: opacity 0.3s ease;
+}
 
+.picture img[src] {
+	opacity: 1;
 }
+
 #about-me {
-	flex: 2
+	flex: 2;
+	display: flex;
+	flex-direction: column;
 }
+
 .about-me__title {
 	margin-top: 1em;
 	margin-bottom: 60px;
 	font-size: 30px;
+	line-height: 1.2;
 }
+
 .about-me__introduction {
 	font-family: 'Spectral';
 	font-weight: 800;
 	font-style: italic;
 	width: 60%;
+	line-height: 1.6;
 }
+
 #about-me p {
 	width: 80%;
 	font-size: 14px;
+	line-height: 1.6;
 }
 
 #gallery {
-	/*	min-height: 100vh; */
+	content-visibility: auto;
+	contain-intrinsic-size: auto 500px;
 }
-.title{
+
+.title {
 	text-align: center;
 	padding-block: 2em;
 }
+
 .gallery .nav {
 	justify-content: center;
 }
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 	color: #fff;
 	background-color: #BEB45A;
-	border-radius:0 ;
+	border-radius: 0;
 }
+
 .nav-pills .nav-link {
-	color: #000
+	color: #000;
 }
+
 .item-column {
 	position: relative;
 	margin-bottom: 0 !important;
 	padding: 0;
 }
-.item-column::after{
+
+.item-column::after {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
-
 }
+
 .gallery-item {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	aspect-ratio: 1 / 1;
 	object-fit: cover;
 	padding: .5em;
+	background-color: #f0f0f0;
+	transition: opacity 0.3s ease;
 }
+
+.gallery-item[src] {
+	opacity: 1;
+}
+
 .mg-prev, .mg-next {
 	width: 30px;
 	height: 30px;
-	border-radius: 00%;
+	border-radius: 0%;
 	justify-content: center;
 	align-items: center;
 	display: flex;
@@ -143,12 +188,13 @@ body {
 	margin: auto;
 	padding-block: 3em;
 }
+
 .quote__text {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
-
 }
+
 .quote__author {
 	font-family: Spectral;
 	font-weight: 800;
@@ -157,10 +203,13 @@ body {
 
 #services {
 	margin: auto;
-	background-color: #A8D5D8 ;
+	background-color: #A8D5D8;
 	position: relative;
+	content-visibility: auto;
+	contain-intrinsic-size: auto 500px;
 }
-#services .container::before{
+
+#services .container::before {
 	content: ' ';
 	background-color: #1C6474;
 	position: absolute;
@@ -174,15 +223,14 @@ body {
 #services .container {
 	justify-content: space-between;
 	display: flex;
-	padding : 2em 0;
-
+	padding: 2em 0;
 }
 
 .service {
 	background-color: white;
 	max-width: 390px;
 	width: 30%;
-	height: 337px;
+	min-height: 337px;
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -192,15 +240,17 @@ body {
 
 #contact {
 	margin: auto;
-	background-color: #D8D3A8 ;
+	background-color: #D8D3A8;
 	position: relative;
 	padding-inline: 100px;
 	padding-block: 100px;
+	min-height: 500px;
 }
 
 #contact .container {
 	display: flex;
 }
+
 .picture.right::before {
 	content: ' ';
 	background-color: #BEB45A;
@@ -211,10 +261,11 @@ body {
 	right: 0;
 	z-index: -1;
 }
-.form-container {
-	flex : 2;
 
+.form-container {
+	flex: 2;
 }
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -239,14 +290,15 @@ form textarea {
 	font-size: 1.2em;
 	margin-bottom: 20px;
 }
+
 input[type="submit"] {
 	background-color: #BEB45A;
-	padding: .5em 1em
+	padding: .5em 1em;
 }
 
 @media all and (max-width: 1180px) {
 	.picture {
-		flex : 2;
+		flex: 2;
 	}
 	#about, #contact .container {
 		align-items: center;
@@ -261,9 +313,8 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 1000px) {
-	#about{
+	#about {
 		flex-direction: column;
-
 	}
 	.picture {
 		width: 50%;
@@ -277,7 +328,7 @@ input[type="submit"] {
 		left: 0;
 		z-index: -1;
 	}
-	.about-me__title{
+	.about-me__title {
 		text-align: center;
 		margin-top: 1em;
 	}
@@ -288,13 +339,12 @@ input[type="submit"] {
 		width: 100%;
 		max-width: 100%;
 		height: auto;
-		margin: 2em 0
+		margin: 2em 0;
 	}
-	.service__description{
+	.service__description {
 		margin-bottom: 1em;
 	}
-
-	#services .container::before{
+	#services .container::before {
 		width: 30%;
 		height: 100%;
 		bottom: 0;
@@ -302,7 +352,6 @@ input[type="submit"] {
 		left: auto;
 		z-index: 0;
 	}
-
 	#contact .container {
 		flex-direction: column;
 	}
@@ -353,4 +402,3 @@ input[type="submit"] {
 		width: 80%;
 	}
 }
-
