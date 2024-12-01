@@ -9,6 +9,11 @@ body {
 	font-style: normal;
 	box-sizing: border-box;
 }
+@font-face {
+	font-family: 'Spectral';
+	src: url('/path-to-font.woff2') format('woff2');
+	font-display: swap;
+  }
 .top-header {
 	background-color: white;
 	position: sticky;
@@ -26,6 +31,11 @@ body {
 	font-size: 26px;
 	line-height: 1.2;
 }
+
+.carousel-inner {
+	height: 500px;
+  }
+  
 
 .nav ul {
 	display: flex;
@@ -254,6 +264,11 @@ img[fetchpriority="high"] {
 	.picture {
 		flex: 2;
 	}
+	.carousel-inner {
+		height: auto;
+
+	  }
+	  
 	#about, #contact .container {
 		align-items: center;
 	}
@@ -337,6 +352,10 @@ img[fetchpriority="high"] {
 		padding-block: 1em;
 		text-align: center;
 	}
+	.carousel-inner {
+		margin-top: 50px;
+		
+	  }
 	.picture.left::before, .picture.right::before {
 		height: 150px;
 	}
