@@ -5,7 +5,7 @@ body {
 	contain-intrinsic-size: auto 1000px;
 }
 * {
-	font-family: 'Inter';
+	font-family: 'Inter' , sans-serif;
 	font-style: normal;
 	box-sizing: border-box;
 }
