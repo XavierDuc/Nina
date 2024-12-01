@@ -2,15 +2,8 @@
 <html lang="fr">
 
 <head>
-	<meta charset="UTF-8">
 	<title>Nina Carducci - Photographe Professionnelle en Île-de-France</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		.carousel-item img {
-			width: 100%;
-			height: auto;
-		}
-	</style>
 	<link rel="preload" href="./assets/bootstrap/bootstrap.css" as="style">
 	<link rel="preload" href="./assets/images/slider/ryoji-iwata-small.webp" as="image">
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css" media="print" onload="this.media='all'">
@@ -20,6 +13,12 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
 		rel="stylesheet">
+	<meta charset="UTF-8">
+	<script src="./assets/bootstrap/bootstrap.bundle.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="./assets/maugallery.js"></script>
+	<script src="./assets/scripts.js" defer></script>
 </head>
 
 <body>
@@ -202,18 +201,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" async></script>
-	<script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
-	<script src="./assets/maugallery.js" defer></script>
-	<script src="./assets/scripts.js" defer></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			const gallery = document.querySelector('.gallery');
-			if (gallery) {
-				new GalleryManager(gallery);
-			}
-		});
-	</script>
 </body>
 
 </html>

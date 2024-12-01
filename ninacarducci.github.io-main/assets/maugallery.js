@@ -1,54 +1,83 @@
 (function () {
-  // Gallery Manager Class
-  class GalleryManager {
-    constructor(galleryElement, options = {}) {
-      // Default configuration with sensible defaults
-      this.config = {
-        columns: 3,
-        lightBox: true,
-        lightboxId: "galleryLightbox",
-        showTags: true,
-        tagsPosition: "bottom",
-        navigation: true,
-      };
+  // Remove jQuery dependency, use vanilla JavaScript
+  function mauGallery(galleryElement, options) {
+    // Default options with reduced complexity
+    const defaults = {
+      columns: 3,
+      lightBox: true,
+      lightboxId: "galleryLightbox",
+      showTags: true,
+      tagsPosition: "bottom",
+      navigation: true,
+    };
 
-      // Merge user options with defaults
-      this.config = { ...this.config, ...options };
-      this.gallery = galleryElement;
-      this.tagsCollection = new Set();
+    // Merge options
+    const settings = { ...defaults, ...options };
+    const tagsCollection = new Set();
 
-      this.init();
+    // Performance optimization: Use event delegation
+    function initEventListeners() {
+      galleryElement.addEventListener("click", handleGalleryClick);
     }
 
-    init() {
-      this.wrapImages();
-      this.renderTags();
-      this.setupEventListeners();
-      this.lazyLoadImages();
+    function handleGalleryClick(event) {
+      const target = event.target;
+
+      // Efficient tag filtering
+      if (target.matches(".nav-link")) {
+        filterByTag(target);
+        return;
+      }
+
+      // Lightbox handling
+      if (settings.lightBox && target.matches(".gallery-item")) {
+        openLightBox(target);
+      }
     }
 
-    wrapImages() {
-      const items = this.gallery.querySelectorAll(".gallery-item");
+    // Lazy loading implementation
+    function lazyLoadImages() {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.add("loaded");
+              observer.unobserve(img);
+            }
+          });
+        },
+        { rootMargin: "50px" }
+      );
+
+      document.querySelectorAll(".gallery-item[data-src]").forEach((img) => {
+        observer.observe(img);
+      });
+    }
+
+    // Efficient image wrapping
+    function wrapImages() {
+      const items = galleryElement.querySelectorAll(".gallery-item");
       items.forEach((item) => {
         const wrapper = document.createElement("div");
         wrapper.className = `item-column mb-4 col-${Math.ceil(
-          12 / this.config.columns
+          12 / settings.columns
         )}`;
-
-        // Wrap the image
         item.parentNode.insertBefore(wrapper, item);
         wrapper.appendChild(item);
 
-        // Collect tags
-        if (this.config.showTags) {
+        // Collect tags efficiently
+        if (settings.showTags) {
           const tag = item.dataset.galleryTag;
-          if (tag) this.tagsCollection.add(tag);
+          if (tag) tagsCollection.add(tag);
         }
       });
     }
 
-    renderTags() {
-      if (!this.config.showTags) return;
+    // Simplified tag rendering
+    function renderTags() {
+      if (!settings.showTags) return;
 
       const tagBar = document.createElement("ul");
       tagBar.className = "my-4 tags-bar nav nav-pills";
@@ -60,50 +89,27 @@
       tagBar.appendChild(allTag);
 
       // Individual tags
-      this.tagsCollection.forEach((tag) => {
+      tagsCollection.forEach((tag) => {
         const tagItem = document.createElement("li");
         tagItem.innerHTML = `<span class="nav-link" data-images-toggle="${tag}">${tag}</span>`;
         tagBar.appendChild(tagItem);
       });
 
-      // Position tags
-      this.config.tagsPosition === "bottom"
-        ? this.gallery.appendChild(tagBar)
-        : this.gallery.insertBefore(tagBar, this.gallery.firstChild);
+      settings.tagsPosition === "bottom"
+        ? galleryElement.appendChild(tagBar)
+        : galleryElement.insertBefore(tagBar, galleryElement.firstChild);
     }
 
-    setupEventListeners() {
-      this.gallery.addEventListener(
-        "click",
-        this.handleGalleryInteraction.bind(this)
-      );
-    }
-
-    handleGalleryInteraction(event) {
-      const target = event.target;
-
-      // Tag filtering
-      if (target.matches(".nav-link")) {
-        this.filterByTag(target);
-        return;
-      }
-
-      // Lightbox
-      if (this.config.lightBox && target.matches(".gallery-item")) {
-        this.openLightbox(target);
-      }
-    }
-
-    filterByTag(tagElement) {
+    function filterByTag(tagElement) {
       const tag = tagElement.dataset.imagesToggle;
 
-      // Reset active states
+      // Remove active states
       document.querySelectorAll(".active-tag").forEach((el) => {
         el.classList.remove("active", "active-tag");
       });
       tagElement.classList.add("active", "active-tag");
 
-      // Filter images
+      // Efficient filtering
       document.querySelectorAll(".gallery-item").forEach((item) => {
         const column = item.closest(".item-column");
         column.style.display =
@@ -111,57 +117,27 @@
       });
     }
 
-    openLightbox(item) {
-      const lightbox = document.getElementById(this.config.lightboxId);
+    function openLightBox(item) {
+      const lightbox = document.getElementById(settings.lightboxId);
       const lightboxImage = lightbox.querySelector(".lightboxImage");
       lightboxImage.src = item.src;
 
-      // Toggle lightbox (Bootstrap modal)
+      // Toggle lightbox (assuming Bootstrap modal)
       const modal = new bootstrap.Modal(lightbox);
       modal.toggle();
     }
 
-    lazyLoadImages() {
-      // Use native lazy loading with Intersection Observer fallback
-      if ("loading" in HTMLImageElement.prototype) {
-        document.querySelectorAll(".gallery-item[data-src]").forEach((img) => {
-          img.loading = "lazy";
-          img.src = img.dataset.src;
-        });
-      } else {
-        // Fallback for browsers without native lazy loading
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add("loaded");
-                observer.unobserve(img);
-              }
-            });
-          },
-          {
-            rootMargin: "50px",
-            threshold: 0.1,
-          }
-        );
-
-        document.querySelectorAll(".gallery-item[data-src]").forEach((img) => {
-          observer.observe(img);
-        });
-      }
+    // Initialize gallery
+    function init() {
+      wrapImages();
+      renderTags();
+      initEventListeners();
+      lazyLoadImages();
     }
+
+    init();
   }
 
   // Expose to global scope
-  window.GalleryManager = GalleryManager;
+  window.mauGallery = mauGallery;
 })();
-
-// Usage example
-document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.querySelector(".gallery");
-  if (gallery) {
-    new GalleryManager(gallery);
-  }
-});
