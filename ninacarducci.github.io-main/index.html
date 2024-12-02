@@ -33,20 +33,7 @@
 			document.body.appendChild(script);
 		});
 	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const image = document.getElementById("ryojiImage");
 
-			// Check if the screen width is less than or equal to 600px (mobile version)
-			if (window.innerWidth <= 600) {
-				// Add the lazy loading attribute for mobile devices
-				image.setAttribute("loading", "lazy");
-			} else {
-				// Remove lazy loading for larger devices (desktop/tablets)
-				image.removeAttribute("loading");
-			}
-		});
-	</script>
 
 
 
