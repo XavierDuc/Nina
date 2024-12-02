@@ -258,6 +258,9 @@ input[type="submit"] {
 	#about-me h6, #about-me p {
 		width: 100%;
 	}
+	.carousel-item img {
+        height: 600px; 
+    }
 }
 
 @media all and (max-width: 1000px) {
@@ -317,6 +320,9 @@ input[type="submit"] {
 		right: 0;
 		z-index: -1;
 	}
+	.carousel-item img {
+        height: 500px; 
+    }
 }
 
 @media all and (max-width: 650px) {
@@ -352,5 +358,8 @@ input[type="submit"] {
 	.picture {
 		width: 80%;
 	}
+	.carousel-item img {
+        height: 300px; 
+    }
 }
 
