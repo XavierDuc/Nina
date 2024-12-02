@@ -5,7 +5,16 @@
 	<title>Nina Carducci - Photographe Professionnelle en Île-de-France</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preload" href="./assets/bootstrap/bootstrap.css" as="style">
-	<link rel="preload" href="./assets/images/slider/ryoji-iwata-large.webp" as="image">
+	<link rel="preload" href="./assets/images/slider/ryoji-iwata-small.webp" as="image" media="(max-width: 600px)">
+	<link rel="preload" href="./assets/images/slider/ryoji-iwata-medium.webp" as="image" media="(max-width: 1200px)">
+	<link rel="preload" href="./assets/images/slider/ryoji-iwata-large.webp" as="image" media="(min-width: 1201px)">
+	<style>
+		.carousel-item img {
+			width: 100%;
+			height: auto;
+		}
+	</style>
+
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +28,7 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
 	<script src="./assets/maugallery.js" defer></script>
 	<script src="./assets/scripts.js" defer></script>
+
 </head>
 
 
