@@ -5,13 +5,9 @@ body {
 * {
 	font-family: 'Inter';
 	font-style: normal;
-}
-@font-face {
-	font-family: 'Inter';
-	src: url('your-font-file.woff2') format('woff2');
-	font-display: swap;
-  }
-  
+	
+} 
+
 .top-header {
 	background-color: white;
 	position: sticky;

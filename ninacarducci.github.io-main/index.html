@@ -7,11 +7,10 @@
 	<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Spectral:ital,wght@0,400;1,400&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" as="style">
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/style.css" media="print" onload="this.media='all'">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" ... defer></script>
 	<script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
 	<script src="./assets/maugallery.js" defer></script>
 	<script src="./assets/scripts.js" defer></script>
@@ -27,6 +26,7 @@
 		}
 	</style>
 	<meta charset="UTF-8">
+	<link rel="preload" as="image" href="./assets/images/slider/ryoji-iwata-large.webp" />
 </head>
 
 
@@ -111,7 +111,7 @@
 		<div class="picture left">
 			<picture>
 				<img src="./assets/images/nina-small.webp" width="350" height="350" alt="image de nina carducci"
-					fetchpriority="high" loading="eager" style="max-width: 100%; height: auto;">
+					loading="eager" style="max-width: 100%; height: auto;">
 			</picture>
 		</div>
 		<div id="about-me">
@@ -133,38 +133,38 @@
 			<div class="gallery" style="display: none">
 				<img data-gallery-tag="Concert" class="gallery-item"
 					src="./assets/images/gallery/concerts/aaron-paul-small.webp" width="375" height="320"
-					alt="image de concert de aaron paul" />
+					alt="image de concert de aaron paul" loading="lazy" />
 				<img data-gallery-tag="Entreprises" class="gallery-item"
 					src="./assets/images/gallery/entreprise/ali-morshedlou-small.webp" width="375" height="320"
-					alt="photo de ali" />
+					alt="photo de ali" loading="lazy" />
 
 				<img data-gallery-tag="Entreprises" class="gallery-item"
 					src="./assets/images/gallery/entreprise/jason-goodman-small.webp" width="375" height="320"
-					alt="photo de jason goodman" />
+					alt="photo de jason goodman" loading="lazy" />
 
 				<img data-gallery-tag="Mariages" class="gallery-item"
 					src="./assets/images/gallery/mariage/hannah-busing-small.webp" width="375" height="320"
-					alt="photo de hannah-busing" />
+					alt="photo de hannah-busing" loading="lazy" />
 
 				<img data-gallery-tag="Portrait" class="gallery-item"
 					src="./assets/images/gallery/portraits/ade-tunji-small.webp" width="375" height="320"
-					alt="photo de ade-tunji" />
+					alt="photo de ade-tunji" loading="lazy" />
 
 				<img data-gallery-tag="Mariages" class="gallery-item"
 					src="./assets/images/gallery/mariage/jakob-owens-small.webp" width="375" height="320"
-					alt="photo de jakob-owens-" />
+					alt="photo de jakob-owens-" loading="lazy" />
 
 				<img data-gallery-tag="Portrait" class="gallery-item"
 					src="./assets/images/gallery/portraits/nino-van-prattenburg-small.webp" width="375" height="320"
-					alt="photo de nino-van-prattenburg" />
+					alt="photo de nino-van-prattenburg" loading="lazy" />
 
 				<img data-gallery-tag="Concert" class="gallery-item"
 					src="./assets/images/gallery/concerts/austin-neill-small.webp" width="375" height="320"
-					alt="image de concert de austin-neill" />
+					alt="image de concert de austin-neill" loading="lazy" />
 
 				<img data-gallery-tag="Entreprises" class="gallery-item"
 					src="./assets/images/gallery/entreprise/mateus-campos-felipe-small.webp" width="375" height="320"
-					alt="photo de mateus-campos-felipe" />
+					alt="photo de mateus-campos-felipe" loading="lazy" />
 			</div>
 		</div>
 		<div class="quote">
@@ -250,7 +250,8 @@
 					<source media="(max-width: 600px)" srcset="./assets/images/camera-small.webp">
 					<source media="(max-width: 1200px)" srcset="./assets/images/camera-medium.webp">
 					<source srcset="./assets/images/camera-large.webp">
-					<img src="./assets/images/camera-small.webp" width="360" height="360" alt="image de camera">
+					<img src="./assets/images/camera-small.webp" width="360" height="360" alt="image de camera"
+						loading="lazy">
 				</picture>
 			</div>
 		</div>
