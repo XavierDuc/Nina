@@ -4,13 +4,19 @@
 <head>
 	<title>Nina Carducci - Photographe Professionnelle en Île-de-France</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Cache-Control" content="public, max-age=2592000">
-	<link rel="preload" href="./assets/bootstrap/bootstrap.css" as="style">
-	<link rel="preload" href="./assets/images/slider/ryoji-iwata-large.webp" as="image" type="image/webp">
+	<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+	<link rel="preload" href="./assets/bootstrap/bootstrap.css" as="style" fetchpriority="high">
+	<link rel="preload" href="./assets/images/slider/ryoji-iwata-large.webp" as="image" type="image/webp"
+		fetchpriority="high">
 	<style>
 		.carousel-item img {
 			width: 100%;
 			height: auto;
+			object-fit: cover;
+		}
+
+		body {
+			font-display: swap;
 		}
 	</style>
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
@@ -77,10 +83,11 @@
 						   1024px" class="d-block w-100" width="1300" height="750" alt="image de ryoji iwata"> -->
 					<img src="./assets/images/slider/ryoji-iwata-large.webp"
 						alt="Homme en costume Traversant un passage piétion" class="d-block w-100" width="1920"
-						height="888" loading="eager" fetchpriority="high" srcset="./assets/images/slider/ryoji-iwata-small.webp 375w,
-								   ./assets/images/slider/ryoji-iwata-medium.webp 768w,
-								   ./assets/images/slider/ryoji-iwata-large.webp 1920w" sizes="(max-width: 375px) 375px,
-								  (max-width: 768px) 768px,
+						height="888" loading="eager" fetchpriority="high" decoding="async"
+						style="content-visibility: auto; contain-intrinsic-size: 1920px 888px;" srcset="./assets/images/slider/ryoji-iwata-small.webp 375w, 
+								   ./assets/images/slider/ryoji-iwata-medium.webp 768w, 
+								   ./assets/images/slider/ryoji-iwata-large.webp 1920w" sizes="(max-width: 375px) 375px, 
+								  (max-width: 768px) 768px, 
 								  1920px">
 				</div>
 				<div class="carousel-item">
