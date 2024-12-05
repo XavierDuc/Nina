@@ -5,44 +5,30 @@
 	<title>Nina Carducci - Photographe Professionnelle en Île-de-France</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-	<link rel="preload" href="./assets/bootstrap/bootstrap.css" as="style" fetchpriority="high">
 	<link rel="preload" href="./assets/images/slider/ryoji-iwata-large.webp" as="image" type="image/webp"
 		fetchpriority="high">
 	<style>
+		body {
+			font-family: 'Inter', sans-serif;
+		}
+
 		.carousel-item img {
 			width: 100%;
 			height: auto;
 			object-fit: cover;
-		}
-
-		body {
-			font-display: swap;
 		}
 	</style>
 	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;1,300;1,400;1,800&display=swap"
 		rel="stylesheet">
 	<meta charset="UTF-8">
 	<script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" ... defer></script>
 	<script src="./assets/maugallery.js" defer></script>
 	<script src="./assets/scripts.js" defer></script>
-
-	<!-- <script>
-		window.addEventListener('load', function () {
-			const script = document.createElement('script');
-			script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-			document.body.appendChild(script);
-		});
-	</script> -->
-
-
-
-
 
 </head>
 
@@ -67,12 +53,12 @@
 
 		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-					aria-current="true" aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-					aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-					aria-label="Slide 3"></button>
+				<button type="button" alt="carroussel slide 1" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" alt="carroussel slide 2" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" alt="carroussel slide 3" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="2" aria-label="Slide 3"></button>
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
@@ -88,7 +74,7 @@
 							sizes="(max-width: 375px) 375px, (max-width: 768px) 768px, 1920px">
 						<img src="./assets/images/slider/ryoji-iwata-large.jpg"
 							alt="Homme en costume Traversant un passage piéton" class="d-block w-100" width="1920"
-							height="888" loading="eager" fetchpriority="high" decoding="async">
+							height="888" loading="eager" fetchpriority="high">
 					</picture>
 				</div>
 				<div class="carousel-item">
@@ -127,7 +113,7 @@
 		<div class="picture left">
 			<picture>
 				<img src="./assets/images/nina-small.webp" width="350" height="350" alt="image de nina carducci"
-					fetchpriority="high" loading="eager" decoding="async" style="max-width: 100%; height: auto;">
+					fetchpriority="high" loading="eager" style="max-width: 100%; height: auto;">
 			</picture>
 		</div>
 		<div id="about-me">
