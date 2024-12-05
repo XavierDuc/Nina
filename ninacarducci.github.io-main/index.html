@@ -81,14 +81,19 @@
 							./assets/images/slider/ryoji-iwata-large.webp 1024w" sizes="(max-width: 350px) 350px,
 						   (max-width: 768px) 768px,
 						   1024px" class="d-block w-100" width="1300" height="750" alt="image de ryoji iwata"> -->
-					<img src="./assets/images/slider/ryoji-iwata-large.webp"
-						alt="Homme en costume Traversant un passage piétion" class="d-block w-100" width="1920"
-						height="888" loading="eager" fetchpriority="high" decoding="async"
-						style="content-visibility: auto; contain-intrinsic-size: 1920px 888px;" srcset="./assets/images/slider/ryoji-iwata-small.webp 375w, 
-								   ./assets/images/slider/ryoji-iwata-medium.webp 768w, 
-								   ./assets/images/slider/ryoji-iwata-large.webp 1920w" sizes="(max-width: 375px) 375px, 
-								  (max-width: 768px) 768px, 
-								  1920px">
+					<picture>
+						<source srcset="./assets/images/slider/ryoji-iwata-large.avif 1920w,
+										./assets/images/slider/ryoji-iwata-medium.avif 768w,
+										./assets/images/slider/ryoji-iwata-small.avif 375w" type="image/avif"
+							sizes="(max-width: 375px) 375px, (max-width: 768px) 768px, 1920px">
+						<source srcset="./assets/images/slider/ryoji-iwata-large.webp 1920w,
+										./assets/images/slider/ryoji-iwata-medium.webp 768w,
+										./assets/images/slider/ryoji-iwata-small.webp 375w" type="image/webp"
+							sizes="(max-width: 375px) 375px, (max-width: 768px) 768px, 1920px">
+						<img src="./assets/images/slider/ryoji-iwata-large.jpg"
+							alt="Homme en costume Traversant un passage piéton" class="d-block w-100" width="1920"
+							height="888" loading="eager" fetchpriority="high" decoding="async">
+					</picture>
 				</div>
 				<div class="carousel-item">
 					<img src="./assets/images/slider/nicholas-green-large.webp" alt="image de nicholas-green"
