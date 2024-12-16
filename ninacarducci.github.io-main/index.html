@@ -5,15 +5,17 @@
 	<title>Nina Carducci - Photographe Professionnelle en Île-de-France</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+	<meta name="description"
+		content="Nina carducci est une photographe professionnel qui exerce en ile de france, specialiser en shooting photo, retouche et album photographies">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" as="style">
-	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="./assets/style.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/style.min.css" media="print" onload="this.media='all'">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" ... defer></script>
 	<script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
-	<script src="./assets/maugallery.js" defer></script>
-	<script src="./assets/scripts.js" defer></script>
+	<script src="./assets/maugallery.min.js" defer></script>
+	<script src="./assets/scripts.min.js" defer></script>
 	<style>
 		body {
 			font-family: 'Inter', sans-serif;
@@ -25,6 +27,62 @@
 			object-fit: cover;
 		}
 	</style>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Nina Carducci Photographe",
+			"image": "https://github.com/XavierDuc/Nina/blob/main/ninacarducci.github.io-main/assets/images/nina-medium.webp",
+			"@id": "https://github.com/XavierDuc/Nina/blob/main/ninacarducci.github.io-main/assets/images/nina-medium.webp",
+			"url": "https://github.com/XavierDuc/Nina",
+			"telephone": "05 56 67 78 89",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "68 avenue Alsace-Lorraine",
+				"addressLocality": "Bordeaux",
+				"postalCode": "33200",
+				"addressCountry": "FR"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 44.8465743,
+				"longitude": -0.6065366999999999
+			},
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday"
+				],
+				"opens": "10:00",
+				"closes": "19:00"
+			}
+
+		}
+	</script>
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@nina Carducci">
+	<meta name="twitter:creator" content="@nina Carducci">
+	<meta name="twitter:title" content="Nina Carducci, photographe professionnelle basée à Bordeaux">
+	<meta name="twitter:description"
+		content="Capturer les moments les plus précieux de votre vie avec créativité et passion. Photographe professionnelle basée à Bordeaux, spécialisée dans les portraits, les mariages et les événements. Des images authentiques et intemporelles qui racontent votre histoire. Réservez votre séance photo dès maintenant !">
+	<meta name="twitter:image:src"
+		content="https://github.com/XavierDuc/Nina/blob/main/ninacarducci.github.io-main/assets/images/slider/edward-cisneros-mediumu.webp">
+	<meta name="twitter:image:alt" content="couple dansant dans un balet">
+
+	<meta property="og:title" content="Nina Carducci, photographe professionnelle basée à Bordeaux">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://xavierduc.github.io/Nina/ninacarducci.github.io-main/">
+	<meta property="og:author" content="Nina Carducci">
+	<meta property="og:description"
+		content="Capturer les moments les plus précieux de votre vie avec créativité et passion. Photographe professionnelle basée à Bordeaux, spécialisée dans les portraits, les mariages et les événements. Des images authentiques et intemporelles qui racontent votre histoire. Réservez votre séance photo dès maintenant !">
+	<meta property="og:image"
+		content="https://github.com/XavierDuc/Nina/blob/main/ninacarducci.github.io-main/assets/images/slider/edward-cisneros-mediumu.webp">
+	e
 	<meta charset="UTF-8">
 	<link rel="preload" as="image" href="./assets/images/slider/ryoji-iwata-large.webp" />
 </head>
@@ -60,11 +118,6 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<!-- <img id="ryojiImage" src="./assets/images/slider/ryoji-iwata-small.webp" srcset="./assets/images/slider/ryoji-iwata-small.webp 350w,
-							./assets/images/slider/ryoji-iwata-small.webp 768w,
-							./assets/images/slider/ryoji-iwata-large.webp 1024w" sizes="(max-width: 350px) 350px,
-						   (max-width: 768px) 768px,
-						   1024px" class="d-block w-100" width="1300" height="750" alt="image de ryoji iwata"> -->
 					<picture>
 						<source srcset="./assets/images/slider/ryoji-iwata-large.webp 1920w,
 										./assets/images/slider/ryoji-iwata-medium.webp 768w,
@@ -110,7 +163,7 @@
 	<div id="about">
 		<div class="picture left">
 			<picture>
-				<img src="./assets/images/nina-small.webp" width="350" height="350" alt="image de nina carducci"
+				<img src="./assets/images/nina-medium.webp" width="350" height="350" alt="image de nina carducci"
 					loading="eager" style="max-width: 100%; height: auto;">
 			</picture>
 		</div>
@@ -132,30 +185,30 @@
 		<div class="container py-3">
 			<div class="gallery" style="display: none">
 				<img data-gallery-tag="Concert" class="gallery-item"
-					src="./assets/images/gallery/concerts/aaron-paul-small.webp" width="375" height="320"
+					src="./assets/images/gallery/concerts/aaron-paul-medium.webp" width="375" height="320"
 					alt="image de concert de aaron paul" loading="lazy" />
 				<img data-gallery-tag="Entreprises" class="gallery-item"
-					src="./assets/images/gallery/entreprise/ali-morshedlou-small.webp" width="375" height="320"
+					src="./assets/images/gallery/entreprise/ali-morshedlou-medium.webp" width="375" height="320"
 					alt="photo de ali" loading="lazy" />
 
 				<img data-gallery-tag="Entreprises" class="gallery-item"
-					src="./assets/images/gallery/entreprise/jason-goodman-small.webp" width="375" height="320"
+					src="./assets/images/gallery/entreprise/jason-goodman-medium.webp" width="375" height="320"
 					alt="photo de jason goodman" loading="lazy" />
 
 				<img data-gallery-tag="Mariages" class="gallery-item"
-					src="./assets/images/gallery/mariage/hannah-busing-small.webp" width="375" height="320"
+					src="./assets/images/gallery/mariage/hannah-busing-medium.webp" width="375" height="320"
 					alt="photo de hannah-busing" loading="lazy" />
 
 				<img data-gallery-tag="Portrait" class="gallery-item"
-					src="./assets/images/gallery/portraits/ade-tunji-small.webp" width="375" height="320"
+					src="./assets/images/gallery/portraits/ade-tunji-medium.webp" width="375" height="320"
 					alt="photo de ade-tunji" loading="lazy" />
 
 				<img data-gallery-tag="Mariages" class="gallery-item"
-					src="./assets/images/gallery/mariage/jakob-owens-small.webp" width="375" height="320"
+					src="./assets/images/gallery/mariage/jakob-owens-medium.webp" width="375" height="320"
 					alt="photo de jakob-owens-" loading="lazy" />
 
 				<img data-gallery-tag="Portrait" class="gallery-item"
-					src="./assets/images/gallery/portraits/nino-van-prattenburg-small.webp" width="375" height="320"
+					src="./assets/images/gallery/portraits/nino-van-prattenburg-medium.webp" width="375" height="320"
 					alt="photo de nino-van-prattenburg" loading="lazy" />
 
 				<img data-gallery-tag="Concert" class="gallery-item"
@@ -163,7 +216,7 @@
 					alt="image de concert de austin-neill" loading="lazy" />
 
 				<img data-gallery-tag="Entreprises" class="gallery-item"
-					src="./assets/images/gallery/entreprise/mateus-campos-felipe-small.webp" width="375" height="320"
+					src="./assets/images/gallery/entreprise/mateus-campos-felipe-medium.webp" width="375" height="320"
 					alt="photo de mateus-campos-felipe" loading="lazy" />
 			</div>
 		</div>
